@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css?family=Audiowide");
+#head {
+  width: 100%;
+  height: 100%;
+}
+#body {
+  width: inherit;
+  height: inherit;
+  margin: 0px;
+}
+#root {
+  widows: inherit;
+  height: inherit;
+}
+.gradient {
+  width: inherit;
+  height: inherit;
+  /* can be treated like a fallback */
+  background-color: #ffffff;
+
+  /* will be "on top", if browser supports it */
+  //   background-image: linear-gradient(#f3e7e9, #e3eeff);
+
+  /* these will reset other properties, like background-position, but it does know what you mean */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-form {
+  height: 100%;
+  background: #f3e7e9;
+  text-align: center;
+  position: relative;
+  margin-top: 40px !important;
+
+  .login-title {
+    margin-top: 0px;
+    font-size: 1em;
+    color: #5043cc;
+    font-family: "Audiowide";
+  }
+  .login-label {
+    font-family: Poppins-Regular;
+    font-size: 16px;
+    color: black;
+    text-decoration: none;
+  }
+  .login-normal-label {
+    margin-left: 15%;
+    text-align: left;
+  }
+  .login-text-field {
+    width: 70%;
+  }
+  .username-textfield {
+    margin-bottom: 36px !important;
+  }
+  .forgot-password-text {
+    text-align: right;
+    margin-right: 15%;
+  }
+
+  .login-forgot-password-label:hover {
+    color: #c1ebd4;
+  }
+
+  .login-form-btn {
+    width: 70%;
+    margin-top: 16px !important;
+    border-radius: 25px;
+    background-color: #0073c5;
+  }
+  .login-round-button-row {
+    margin-top: 16px;
+  }
+  .google-icon-button {
+    background: rgb(209, 72, 54);
+    margin-left: 8px !important;
+  }
+  .face-icon-button {
+    background: #4267b2;
+  }
+  .login-logo {
+    height: 17%;
+    margin-top: 30%;
+  }
+  .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    .h2 {
+      font-size: 0.6em;
+      color: #cdcdcd;
+      font-family: "Luckiest Guy", cursive;
+    }
+    .h3 {
+      font-size: 0.7em;
+      color: plum;
+    }
+  }
+}
