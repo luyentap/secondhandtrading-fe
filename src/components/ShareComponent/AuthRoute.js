@@ -1,6 +1,6 @@
 import * as React from "react";
-import { Route, Redirect } from "react-router-dom";
 import { withRouter } from "react-router";
+import { Redirect, Route } from "react-router-dom";
 import UserService from "./../../services/UserService";
 
 export class AuthRoute extends React.Component {
@@ -14,8 +14,12 @@ export class AuthRoute extends React.Component {
   // refresh page after login
   closeAndRefresh = () => {
     // eslint-disable-next-line no-restricted-globals
-    opener.location.reload(); // reload your login page
-    window.close(); // close pop up window
+    // opener.location.reload(); // reload your login page
+    
+    // window.close(); // close pop up window
+
+    //fix: redirect the home page
+    window.location.href= `${process.env.HOME_PAGE}`;
   };
 
   getInfo() {

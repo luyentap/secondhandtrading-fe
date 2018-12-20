@@ -1,12 +1,10 @@
-import * as React from "react";
 import Button from "@material-ui/core/Button";
+import * as React from "react";
 
 class GoogleLogin extends React.Component {
   onLogin = () => {
-    onLogin = () => {
     window.location.href=`
       ${process.env.REACT_APP_API_URL}auth/google`
-  };
   };
   render() {
     return (
