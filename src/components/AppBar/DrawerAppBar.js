@@ -1,19 +1,19 @@
 /* eslint-disable no-restricted-globals */
-import React from "react";
-import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import LinkButton from "./../ShareComponent/LinkButton";
+import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
+import { withStyles } from "@material-ui/core/styles";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
+import PropTypes from "prop-types";
+import React from "react";
 import { Link } from "react-router-dom";
-import Avatar from "@material-ui/core/Avatar";
+import LinkButton from "./../ShareComponent/LinkButton";
 
 const styles = {
   root: {
@@ -42,7 +42,7 @@ class DrawerAppBar extends React.Component {
   };
 
   logout = () => {
-    localStorage.removeItem("accessToken");
+    localStorage.clear();
     // eslint-disable-next-line no-restricted-globals
     location.reload();
   };

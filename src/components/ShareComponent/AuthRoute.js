@@ -7,23 +7,33 @@ export class AuthRoute extends React.Component {
   // set access token into local storage
   setAccessToken = accessToken => {
     const token = accessToken.substring(7, accessToken.length);
-    localStorage.setItem("accessToken", token);
-    this.getInfo();
+     localStorage.setItem("accessToken", token);
+     this.getInfo();
   };
 
   // refresh page after login
   closeAndRefresh = () => {
     // eslint-disable-next-line no-restricted-globals
-    // opener.location.reload(); // reload your login page
+     // opener.location.reload(); // reload your login page
     
     // window.close(); // close pop up window
 
     //fix: redirect the home page
-    window.location.href= `${process.env.HOME_PAGE}`;
+    if(localStorage.getItem("userId")===null || localStorage.getItem("avatar")=== null || localStorage.getItem("fullName") ===null){
+      // window.location.reload(); //dont use reload
+      // window.location.href= ''; //use it instead of
+     this.getInfo();
+    //   console.log(localStorage.getItem("userId"));
+    //   console.log('localstorage',localStorage)
+    }
+    else{
+      window.location.href= 'http://secondhandtrading-fe.herokuapp.com';
+      window.location.href ='';
+    }
   };
 
-  getInfo() {
-    UserService.getInfo().then(response => {
+   getInfo = async () => {
+    await UserService.getInfo().then( response => {
       localStorage.setItem("fullName", response.data.google.name);
       localStorage.setItem("avatar", response.data.google.avatar);
       localStorage.setItem("userId", response.data._id);
